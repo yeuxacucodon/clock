@@ -8,7 +8,7 @@ setInterval(() => {
   const mm = date.getMinutes() * 6;
   const ss = date.getSeconds() * 6;
 
-  hr.style.transform = `rotateZ(${hh + mm / 30}deg)`;
+  hr.style.transform = `rotateZ(${hh + mm / 15}deg)`;
   min.style.transform = `rotateZ(${mm}deg)`;
   sec.style.transform = `rotateZ(${ss}deg)`;
 });
