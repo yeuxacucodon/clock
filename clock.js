@@ -1,14 +1,26 @@
-const hr = document.getElementById("hr");
-const min = document.getElementById("min");
-const sec = document.getElementById("sec");
+const hr = document.getElementById("hr")
+const min = document.getElementById("min")
+const sec = document.getElementById("sec")
 
-setInterval(() => {
-  const date = new Date();
-  const hh = date.getHours() * 30;
-  const mm = date.getMinutes() * 6;
-  const ss = date.getSeconds() * 6;
+rotation = (target, val) => {
+  target.style.transform = `rotate(${val}deg)`
+}
 
-  hr.style.transform = `rotateZ(${hh + mm / 15}deg)`;
-  min.style.transform = `rotateZ(${mm}deg)`;
-  sec.style.transform = `rotateZ(${ss}deg)`;
-});
+clock = () => {
+  let date = new Date()
+  let hh = (date.getHours() % 12) + date.getMinutes() / 59
+  let mm = date.getMinutes()
+  let ss = date.getSeconds()
+
+  hh *= 30
+  mm *= 6
+  ss *= 6
+
+  rotation(hr, hh)
+  rotation(min, mm)
+  rotation(sec, ss)
+
+  setTimeout(clock, 500)
+}
+
+window.onload = clock()
