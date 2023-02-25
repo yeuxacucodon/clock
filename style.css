@@ -10,7 +10,6 @@ body {
   align-items: center;
   justify-content: center;
   background: black;
-  overflow: hidden;
 }
 
 .container {
@@ -26,7 +25,7 @@ body {
 .container .circle:nth-child(1) {
   width: 200px;
   height: 200px;
-  top: -100px;
+  top: -10px;
   left: -100px;
   background: linear-gradient(#f5180a, #c736fa);
   animation-name: move-up;
@@ -42,7 +41,7 @@ body {
   width: 150px;
   height: 150px;
   background: linear-gradient(#33ff01, #c5ff1c);
-  bottom: -80px;
+  bottom: 0;
   right: -40px;
   animation-name: move-down;
 }
@@ -54,8 +53,8 @@ body {
 }
 
 .clock {
-  width: 400px;
-  height: 400px;
+  width: 380px;
+  height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
